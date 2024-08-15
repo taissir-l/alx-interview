@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """
 algo of the Log parsing
