@@ -1,16 +1,21 @@
 #!/usr/bin/python3
-"""Rotate the 2D Matrix"""
+"""
+to rotate 2D Matrix
+"""
 
 
 def rotate_2d_matrix(matrix):
-    """rotate matrix 90 degrees"""
+    """rotate 2D matrix 90 degrees
+    Args:
+        matrix (list[[list]]): matrix
+    """
     n = len(matrix)
-    for layer in range(n // 2):
-        first, last, offset = layer, n - 1 - layer, 0
-        for i in range(first, last):
-            top = matrix[first][i]
-            matrix[first][i] = matrix[last - offset][first]
-            matrix[last - offset][first] = matrix[last][last - offset]
-            matrix[last][last - offset] = matrix[i][last]
-            matrix[i][last] = top
-            offset += 1
+    for i in range(int(n / 2)):
+        y = (n - i - 1)
+        for j in range(i, y):
+            x = (n - 1 - j)
+            tmp = matrix[i][j]
+            matrix[i][j] = matrix[x][i]
+            matrix[x][i] = matrix[y][x]
+            matrix[y][x] = matrix[j][y]
+            matrix[j][y] = tmp
