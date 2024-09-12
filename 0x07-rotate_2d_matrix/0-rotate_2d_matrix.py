@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 ''' 2D matrix rotation clockwise '''
 
-
 def rotate_2d_matrix(matrix):
     '''
         rotates 2d matrix 90 degrees clockwise
@@ -18,4 +17,3 @@ def rotate_2d_matrix(matrix):
             matrix[columns - j][i] = matrix[columns - i][columns - j]
             matrix[columns - i][columns - j] = matrix[j][columns - i]
             matrix[j][columns - i] = temp
-            
